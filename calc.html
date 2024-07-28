@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator</title>
+<style type="text/css">
+.calculator{
+            position:absolute ;
+            top: 200px;
+            left: 500px;
+            border: solid 3px;
+            padding: 50px;
+            line-height: 200%;
+}
+.select-field {
+        width: 100%;
+        }
+
+        .button{
+        width: 100%;
+        }
+</style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="num1" placeholder="Enter first number"><br>
+        <input type="text" id="num2" placeholder="Enter second number"><br>
+        <select id="operator" class="select-field">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select><br>
+        <button onclick="calculate()" class="button">=</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                return "Cannot divide by zero";
+            }
+            return a / b;
+        }
+
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var operator = document.getElementById('operator').value;
+            var result = '';
+
+            switch(operator) {
+                case 'add':
+                    result = add(num1, num2);
+                    break;
+                case 'subtract':
+                    result = subtract(num1, num2);
+                    break;
+                case 'multiply':
+                    result = multiply(num1, num2);
+                    break;
+                case 'divide':
+                    result = divide(num1, num2);
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            document.getElementById('result').textContent = "Result: " + result;
+        }
+    </script>
+</body>
+</html>

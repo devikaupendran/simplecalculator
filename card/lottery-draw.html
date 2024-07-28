@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lottery Draw</title>
+
+    <!-- bootstrap links  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+    <!-- styling html  -->
+     <style>
+        body{
+            position: absolute;
+            top:30%;
+            left:40%;
+        }
+        .heading{
+            font-size: 35px;
+        }
+
+     </style>
+</head>
+<body>
+
+    <button type="button" class="btn btn-info" id="openModal" data-toggle="modal" data-target="#myModal">WINNER</button>
+
+    <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                
+                <h1 id="result1"></h1> <!--here is the result diplayed on modal -->
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- displaying result on body  -->
+    <h1 id="result2" class="heading"></h1>
+    <script src="lottery-draw.js"></script>
+</body>
+</html>
